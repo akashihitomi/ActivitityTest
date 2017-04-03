@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+    android:layout_width="match_parent"
+android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/text_view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:text= "Sign in to Github"
+        android:layout_below="@+id/iamge_view"
+        />
+
+    <TextView
+        android:id="@+id/text_view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:text= "     Passswrod"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="4dp"
+        />
+
+    <TextView
+        android:id="@+id/text_view3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:text= "User name"
+        android:layout_marginTop="29dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/text_view1"
+        android:layout_alignStart="@+id/text_view2"
+        />
+
+    <ImageView
+        android:id="@+id/iamge_view"
+        android:layout_width="70dip"
+        android:layout_height="70dip"
+        android:src="@drawable/tim"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        />
+
+
+
+    <EditText
+        android:id="@+id/edit_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" At least 6 numbers"
+        android:maxLines="1"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/text_view2"
+        android:layout_alignParentEnd="true"
+        android:password="true"
+        android:background="@drawable/images"
+        />
+
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="                   Sign in                    "
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="#32CD32"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp" />
+
+    <EditText
+        android:id="@+id/edit_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Name/E-mai address/Tel"
+        android:maxLines="1"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/images"
+        android:layout_marginTop="185dp"
+        android:layout_alignStart="@+id/text_view3" />
+
+</RelativeLayout>
