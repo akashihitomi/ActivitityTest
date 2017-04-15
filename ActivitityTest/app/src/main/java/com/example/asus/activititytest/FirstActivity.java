@@ -1,35 +1,36 @@
 package com.example.asus.activititytest;
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+        import android.app.Activity;
+        import android.content.DialogInterface;
+        import android.content.Intent;
+        import android.content.SharedPreferences;
+        import android.preference.Preference;
+        import android.preference.PreferenceManager;
+        import android.support.v7.app.AlertDialog;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.view.View;
+        import android.view.Window;
+        import android.widget.Button;
+        import android.widget.CheckBox;
+        import android.widget.EditText;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import java.sql.DataTruncation;
+        import java.sql.DataTruncation;
 
-import static android.R.attr.button;
-import static android.R.attr.data;
-import static android.R.attr.finishOnCloseSystemDialogs;
-import static android.R.attr.id;
-import static android.R.id.button1;
-import static android.R.id.edit;
-import static android.os.Build.VERSION_CODES.M;
-import static com.example.asus.activititytest.R.id.login;
-import static com.example.asus.activititytest.R.id.edit_text1;
-import static com.example.asus.activititytest.R.id.edit_text2;
-import static com.example.asus.activititytest.R.id.remember_password;
+        import static android.R.attr.button;
+        import static android.R.attr.data;
+        import static android.R.attr.finishOnCloseSystemDialogs;
+        import static android.R.attr.id;
+        import static android.R.id.button1;
+        import static android.R.id.edit;
+        import static android.os.Build.VERSION_CODES.M;
+        import static com.example.asus.activititytest.R.id.login;
+        import static com.example.asus.activititytest.R.id.edit_text1;
+        import static com.example.asus.activititytest.R.id.edit_text2;
+        import static com.example.asus.activititytest.R.id.remember_password;
 
 public class FirstActivity extends AppCompatActivity {
     private EditText nameEdit;
@@ -76,13 +77,14 @@ public class FirstActivity extends AppCompatActivity {
                     intent.putExtra("username", nameEdit.getText().toString());
                     intent.putExtra("password", passEdit.getText().toString());
                     Toast.makeText(FirstActivity.this,"登陆成功",Toast.LENGTH_SHORT).show();
-                    FirstActivity.this.startActivityForResult(intent,1);
+                    FirstActivity.this.startActivity(intent);
                     finish();
-                    }else{
+                }else{
                     Toast.makeText(FirstActivity.this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-}
 
+
+}

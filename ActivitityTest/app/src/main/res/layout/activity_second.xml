@@ -15,16 +15,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:background="#32CD32"
+        android:textColor="#FFFFFF"
         android:text="back"
-
         />
 
     <TextView
-        android:id="@+id/remember"
+        android:id="@+id/remembername"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:textSize="15sp"
-
-
         />
+
+    <TextView
+        android:id="@+id/rememberpass"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/remembername"
+        />
+
+    <Button
+        android:id="@+id/tophoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:background="#32CD32"
+        android:textColor="#FFFFFF"
+        android:text="Setting your head portrait"
+        android:layout_below="@+id/back"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

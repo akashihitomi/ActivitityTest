@@ -74,8 +74,8 @@ android:layout_height="match_parent"
         android:password="true"
         android:background="@drawable/images"
         android:layout_below="@+id/text_view2"
-        android:layout_alignEnd="@+id/edit_text1" />
-
+        android:layout_alignEnd="@+id/edit_text1"
+        />
 
     <TextView
         android:id="@+id/remember"
@@ -86,13 +86,13 @@ android:layout_height="match_parent"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="310dp"
         />
+
     <CheckBox
         android:id="@+id/remember_password"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginTop="305dp"
         android:layout_marginLeft="40dp"
-
         />
 
     <Button
@@ -104,7 +104,7 @@ android:layout_height="match_parent"
         android:textSize="20sp"
         android:background="#32CD32"
         android:textColor="#FFFFFF"
-        android:textAllCaps="false"
+
         android:layout_marginTop="350dp"
         android:layout_marginLeft="80dp"
         />
