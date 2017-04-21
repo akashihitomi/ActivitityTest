@@ -3,6 +3,7 @@ package com.example.asus.activititytest;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.ContentUris;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -11,16 +12,19 @@ import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
+import android.preference.DialogPreference;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -29,12 +33,14 @@ import java.io.IOException;
 
 import static android.R.attr.handle;
 import static android.R.attr.path;
+import static android.R.attr.y;
 import static com.example.asus.activititytest.CameraTest.CHOOSE_PHOTO;
 import static com.example.asus.activititytest.R.id.takephoto;
 
 public class CameraTest extends AppCompatActivity {
    public static final int Take_photo = 1;
     public static final int CHOOSE_PHOTO = 2;
+    private Button setHead;
     private ImageView picture;
     private Uri imageUri;
 
@@ -44,6 +50,7 @@ public class CameraTest extends AppCompatActivity {
         setContentView(R.layout.activity_camera_test);
         Button takePhoto = (Button) findViewById(takephoto);
         Button chooseFromAlbum = (Button) findViewById(R.id.album);
+        setHead = (Button) findViewById(R.id.sure);
         picture = (ImageView) findViewById(R.id.headportrait);
 
         takePhoto.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +88,6 @@ public class CameraTest extends AppCompatActivity {
         }
     });
 }
-
     private void openAlbum() {
         Intent intent = new Intent("android.intent.action.GET_CONTENT");
         intent.setType("image/*");
@@ -139,17 +145,17 @@ public class CameraTest extends AppCompatActivity {
             if ("com.android.providers.media.documents".equals(uri.getAuthority())) {
                 String id = docId.split(":")[1];
                 String selection = MediaStore.Images.Media._ID + "=" + id;
-                imagePath = getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,selection);
+                imagePath = getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);
             } else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {
                 Uri contentUri = ContentUris.withAppendedId(Uri.parse("@xml/filepathscontent://downloads/public_downloads"),
                         Long.valueOf(docId));
                 imagePath = getImagePath(contentUri, null);
-              }
-             }else if ("content".equalsIgnoreCase(uri.getScheme())) {
-                imagePath = getImagePath(uri, null);
-            } else if ("file".equalsIgnoreCase(uri.getScheme())) {
-                imagePath = uri.getPath();
             }
+        } else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            imagePath = getImagePath(uri, null);
+        } else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            imagePath = uri.getPath();
+        }
             displayImage(imagePath);
         }
 
@@ -178,5 +184,7 @@ private void displayImage(String imagePath) {
     } else {
         Toast.makeText(this,"图片获取失败",Toast.LENGTH_SHORT).show();
     }
+
+
   }
 }

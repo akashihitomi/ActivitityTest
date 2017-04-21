@@ -25,11 +25,22 @@
         android:id="@+id/album"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="190dp"
         android:textSize="20sp"
         android:background="#55AA00"
         android:textColor="#FFFFFF"
         android:text="从相册中选择"
+        />
+
+    <Button
+        android:id="@+id/sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:textSize="20sp"
+        android:background="#55AA00"
+        android:textColor="#FFFFFF"
+        android:text="确定"
         />
 
     <ImageView

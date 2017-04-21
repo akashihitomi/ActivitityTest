@@ -19,7 +19,7 @@
         android:textSize="20sp"
         android:background="#32CD32"
         android:textColor="#FFFFFF"
-        android:text="back"
+        android:text="返回"
         />
 
     <TextView
@@ -46,8 +46,20 @@
         android:textSize="20sp"
         android:background="#32CD32"
         android:textColor="#FFFFFF"
-        android:text="Setting your head portrait"
+        android:text="设置头像"
         android:layout_below="@+id/back"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/toList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:background="#32CD32"
+        android:textColor="#FFFFFF"
+        android:text="ListView"
+        />
 
 </RelativeLayout>

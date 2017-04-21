@@ -22,12 +22,14 @@ import static com.example.asus.activititytest.R.id.takephoto;
 
 public class SecondActivity extends AppCompatActivity {
     private Button setting;
+    private Button ToList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         setting = (Button) findViewById(R.id.tophoto);
+        ToList = (Button) findViewById(R.id.toList);
         Intent intent = getIntent();
         String username = intent.getStringExtra("username");
         String password = intent.getStringExtra("password");
@@ -42,6 +44,14 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public  void onClick (View v) {
                 Intent intent = new Intent(SecondActivity.this,CameraTest.class);
+                SecondActivity.this.startActivity(intent);
+            }
+        });
+
+        ToList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this, List_View.class);
                 SecondActivity.this.startActivity(intent);
             }
         });
